@@ -13,11 +13,12 @@ best_model = joblib.load("best_model.pkl")
 
 # Define the prediction function
 def predict_crop(N, P, K, temperature, humidity, ph, rainfall):
-    input_data = pd.DataFrame([[N, P, K, temperature, humidity, ph, rainfall]],
-                              columns=["N", "P", "K", "temperature", "humidity", "ph", "rainfall"])
-    input_data = scaler.transform(input_data)  # Standardize input
-    prediction = best_model.predict(input_data)[0]
-    return prediction
+   input_data = pd.DataFrame([[N, P, K, temperature, humidity, ph, rainfall]], 
+                          columns=["N", "P", "K", "temperature", "humidity", "ph", "rainfall"])
+   input_data_scaled = scaler.transform(input_data)  # Standardize input
+   input_data_scaled = pd.DataFrame(input_data_scaled, columns=input_data.columns)  # Restore feature names
+   prediction = best_model.predict(input_data_scaled)[0]
+   return prediction
 
 # Streamlit UI
 st.title("🌱 Crop Recommendation System")
