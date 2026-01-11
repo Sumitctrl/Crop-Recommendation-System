@@ -1,4 +1,5 @@
 🌱 Crop Recommendation System
+✨ Live App: (https://crop-recommendation-system-osoaefjbsuilbvam5bh2xb.streamlit.app/)
 
 An intelligent Machine Learning–based Crop Recommendation System that suggests the most suitable crop to grow based on soil nutrients and environmental conditions.
 The system uses parameters like Nitrogen (N), Phosphorus (P), Potassium (K), temperature, humidity, pH, and rainfall to provide accurate crop recommendations that help farmers improve yield and reduce risk.
